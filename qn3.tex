@@ -1,23 +1,22 @@
 \section{Question 3}
 
-In this section, the script and outputs for questions 3(a) and 3(b) are included.
+In this section, question 3 is discussed.
 
 I was unable to complete this question, however I am describing my approach to it below:
 
+\subsection{3 (a)}
+> Since the likelihood is to be written for a distribution that has positive, countable, discrete samples, we can write down the maximum likelihood using a poisson distribution.
 
+> The log likelihood can be written as:
+ $$ -\ln{L(p)} = -\sum\limits_{i=0}^{N-1} {(y_i \ln{\mu(x_i/\mathbf{p})} - \mu(x_i/\mathbf{p})- \ln{y_i!} )} $$
+Where $x_i$ can be gotten from checking the range of the radii in the respective mass-bin files. Corresponding y_i for the model is drawn form random realizations of the distribution n(x) in equation.2, by using random values of a, b, c generated in the specified range in question 2(a). (Values of A at these points are found using the 3D interpolator written for question 2(h)). 
+$\mathbf{p}$ is the vector containing the parameters (a,b,c) of the data.
+
+> To find the (a,b,c) that maximize this likelihood, the above log likelihood equation is differentiated and equated to zero. 
  
-The script is given by:
+ \subsection{3 b)}
+If the values of (a,b,c) have significant number of outliers, robust fitting would be suitable, since interpolation would wrongly estimate the shape of the function. 
+ 
+The script for downloading the files with the halos containing satellite galaxies is given below:
 \lstinputlisting{qn3.py}
-The output is:
-%\lstinputlisting{qn3.txt}
 
-The figures for 3(a) are:
-
-
-
-% \begin{figure}[h!]
-%   \centering
-%   \includegraphics[width=0.9\linewidth]{./q3a.png}
-%   \caption{3a}
-%   \label{fig:fig1}
-% \end{figure}
